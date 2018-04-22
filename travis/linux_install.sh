@@ -21,9 +21,9 @@ set -ev
 
 # Install HaxeFlixel
 echo $(haxelib config)
-travis_wait haxelib --always install flixel
-yes | travis_wait haxelib run lime setup
-travis_wait haxelib --always set hxcpp 3.4.64
+haxelib --always install flixel
+yes | haxelib run lime setup
+haxelib --always set hxcpp 3.4.64
 
 # Install JDK
 sudo apt-get install -y openjdk-8-jdk
@@ -41,7 +41,7 @@ mv tools $ANDROID_HOME
 export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin
 yes | sdkmanager platform-tools
 yes | sdkmanager "build-tools;24.0.1"
-travis_wait sdkmanager "platforms;android-19"
+sdkmanager "platforms;android-19"
 
 # Install Android NDK
 wget https://dl.google.com/android/repository/android-ndk-r13b-linux-x86_64.zip

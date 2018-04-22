@@ -19,5 +19,5 @@
 
 set -ev
 
-travis_wait haxelib run lime deploy linux
-travis_wait haxelib run lime deploy windows
+haxelib run lime deploy linux
+haxelib run lime deploy windows

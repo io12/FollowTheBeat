@@ -19,6 +19,6 @@
 
 set -ev
 
-travis_wait haxelib run lime build android
-travis_wait haxelib run lime build linux
-travis_wait haxelib run lime build windows
+haxelib run lime build android
+haxelib run lime build linux
+haxelib run lime build windows
