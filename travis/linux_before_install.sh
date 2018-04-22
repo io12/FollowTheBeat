@@ -17,5 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with FollowTheBeat. If not, see <http://www.gnu.org/licenses/>.
 
+set -x
+
 sudo apt-add-repository -y ppa:openjdk-r/ppa
 sudo apt-get -qq update

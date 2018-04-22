@@ -17,6 +17,8 @@
 # You should have received a copy of the GNU General Public License
 # along with FollowTheBeat. If not, see <http://www.gnu.org/licenses/>.
 
+set -x
+
 travis_wait haxelib run lime build android
 travis_wait haxelib run lime build linux
 travis_wait haxelib run lime build windows
