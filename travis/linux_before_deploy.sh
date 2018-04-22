@@ -17,7 +17,7 @@
 # You should have received a copy of the GNU General Public License
 # along with FollowTheBeat. If not, see <http://www.gnu.org/licenses/>.
 
-set -x
+set -ev
 
 travis_wait haxelib run lime deploy linux
 travis_wait haxelib run lime deploy windows
