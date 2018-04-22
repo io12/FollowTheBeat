@@ -19,5 +19,5 @@
 
 set -x
 
-sudo apt-add-repository -y ppa:openjdk-r/ppa
-sudo apt-get -qq update
+apt-add-repository -y ppa:openjdk-r/ppa
+apt-get -qq update

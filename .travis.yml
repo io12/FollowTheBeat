@@ -23,7 +23,7 @@ cache:
   directories:
   - "/home/travis/haxe/lib"
 before_install:
-  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./travis/linux_before_install.sh; fi
+  - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo ./travis/linux_before_install.sh; fi
 install:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./travis/linux_install.sh; fi
 script:
