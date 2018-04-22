@@ -26,10 +26,13 @@ before_install:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then sudo ./travis/linux_before_install.sh; fi
 install:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./travis/linux_install.sh; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./travis/osx_install.sh; fi
 script:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./travis/linux_script.sh; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./travis/osx_script.sh; fi
 before_deploy:
   - if [ "$TRAVIS_OS_NAME" = "linux" ]; then ./travis/linux_before_deploy.sh; fi
+  - if [ "$TRAVIS_OS_NAME" = "osx" ]; then ./travis/osx_before_deploy.sh; fi
 deploy:
   provider: releases
   api_key:
@@ -46,5 +49,5 @@ deploy:
 after_deploy:
   - rm -f export/android/bin/bin/FollowTheBeat-debug.apk
   - rm -f export/linux64/cpp/FollowTheBeat*.zip
-  - rm -f export/mac64/neko/FollowTheBeat*.zip
+  - rm -f export/mac64/cpp/FollowTheBeat*.zip
   - rm -f export/windows/neko/FollowTheBeat*.zip

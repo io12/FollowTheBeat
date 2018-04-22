@@ -19,11 +19,7 @@
 
 set -ev
 
-# Install HaxeFlixel
-echo $(haxelib config)
-haxelib --always install flixel
-yes | haxelib run lime setup
-haxelib --always set hxcpp 3.4.64
+./travis/install_haxeflixel.sh
 
 # Install JDK
 sudo apt-get install -y openjdk-8-jdk
