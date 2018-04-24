@@ -17,7 +17,21 @@
 # You should have received a copy of the GNU General Public License
 # along with FollowTheBeat. If not, see <http://www.gnu.org/licenses/>.
 
+# Actually do the build
+
 set -ev
 
-apt-add-repository -y ppa:openjdk-r/ppa
-apt-get -qq update
+case $TRAVIS_OS_NAME in
+linux)
+	haxelib run lime build android
+	haxelib run lime build linux
+	haxelib run lime build windows
+	;;
+osx)
+	haxelib run lime build mac
+	;;
+*)
+	echo ERROR: Travis build running on unknown OS
+	exit 1
+	;;
+esac

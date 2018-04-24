@@ -17,8 +17,20 @@
 # You should have received a copy of the GNU General Public License
 # along with FollowTheBeat. If not, see <http://www.gnu.org/licenses/>.
 
+# Prepare to deploy compiled release
+
 set -ev
 
-haxelib run lime build android
-haxelib run lime build linux
-haxelib run lime build windows
+case $TRAVIS_OS_NAME in
+linux)
+	haxelib run lime deploy linux
+	haxelib run lime deploy windows
+	;;
+osx)
+	haxelib run lime deploy mac
+	;;
+*)
+	echo ERROR: Travis build running on unknown OS
+	exit 1
+	;;
+esac

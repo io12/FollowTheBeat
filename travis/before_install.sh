@@ -17,6 +17,20 @@
 # You should have received a copy of the GNU General Public License
 # along with FollowTheBeat. If not, see <http://www.gnu.org/licenses/>.
 
+# Prepare to install build dependencies
+# This script must be run with sudo
+
 set -ev
 
-haxelib run lime deploy mac
+case $TRAVIS_OS_NAME in
+linux)
+	apt-add-repository -y ppa:openjdk-r/ppa
+	apt-get -qq update
+	;;
+osx)
+	;;
+*)
+	echo ERROR: Travis build running on unknown OS
+	exit 1
+	;;
+esac
