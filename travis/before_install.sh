@@ -28,6 +28,7 @@ linux)
 	apt-get -qq update
 	;;
 osx)
+	echo DEBUG: nothing
 	;;
 *)
 	echo ERROR: Travis build running on unknown OS
