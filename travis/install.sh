@@ -59,7 +59,7 @@ osx)
 	./travis/install_haxeflixel.sh
 	;;
 *)
-	echo ERROR: Travis build running on unknown OS
+	echo "ERROR: Travis build running on unknown OS $TRAVIS_OS_NAME"
 	exit 1
 	;;
 esac

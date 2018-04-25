@@ -28,10 +28,9 @@ linux)
 	apt-get -qq update
 	;;
 osx)
-	echo DEBUG: nothing
 	;;
 *)
-	echo ERROR: Travis build running on unknown OS
+	echo "ERROR: Travis build running on unknown OS $TRAVIS_OS_NAME"
 	exit 1
 	;;
 esac

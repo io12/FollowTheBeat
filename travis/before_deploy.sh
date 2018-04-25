@@ -30,7 +30,7 @@ osx)
 	haxelib run lime deploy mac
 	;;
 *)
-	echo ERROR: Travis build running on unknown OS
+	echo "ERROR: Travis build running on unknown OS $TRAVIS_OS_NAME"
 	exit 1
 	;;
 esac
