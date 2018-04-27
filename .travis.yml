@@ -23,7 +23,7 @@ cache:
   directories:
   - "/home/travis/haxe/lib"
 before_install:
-  sudo ./travis/before_install.sh
+  sudo -E ./travis/before_install.sh
 install:
   ./travis/install.sh
 script:
