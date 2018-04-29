@@ -38,7 +38,7 @@ deploy:
   file:
     - export/android/bin/bin/FollowTheBeat-debug.apk
     - export/linux64/cpp/FollowTheBeat*.zip
-    - export/mac64/neko/FollowTheBeat*.zip
+    - export/mac64/cpp/FollowTheBeat*.zip
     - export/windows/neko/FollowTheBeat*.zip
   skip_cleanup: true
   on:
